@@ -1,0 +1,41 @@
+import random
+paper= '''
+   ___
+---'   _)_
+          __)
+          ___)
+         ___)
+---.____)'''
+rock= '''
+    ___
+---'   __)
+      (___)
+      (___)
+      (__)
+---._(__) '''
+scissors= '''
+   ___
+---'   _)_
+          __)
+       ____)
+      (__)
+---._(__) '''
+game_images=[paper,rock,scissors]
+user_choice=int(input("what do you choose? type 0 for paper,1 for rock,2 for scissors"))
+if user_choice>=0 and user_choice<=2:
+    print(game_images[user_choice])
+computer_choice=random.randint(0,2)
+print("computer chose")
+print(game_images[computer_choice])
+if user_choice>=3 or user_choice<0:
+    print("invalid number enter valid please")
+elif user_choice==0 and computer_choice==2:
+    print("you win!")
+elif computer_choice > user_choice:
+    print("you lose")
+elif computer_choice==0 and user_choice==2:
+    print("you lose")
+elif user_choice>computer_choice:
+    print("you win")
+elif computer_choice==user_choice:
+    print("draw")
